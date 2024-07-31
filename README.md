@@ -1,2 +1,2 @@
 # 7_GOYO
-hi
+this project is based by my homework.
