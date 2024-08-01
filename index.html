@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/main.css">
   <script type="module" src="./js/index.js"></script>
+  <script type="module" src="./js/mainBanner.js"></script>
   <title>MoviCol</title>
 </head>
 
@@ -22,12 +23,32 @@
   </header>
 
   <section class="mainBanner">
-
+    <ul>
+      <li class="banner-item active"></li>
+      <li class="banner-item"></li>
+      <li class="banner-item"></li>
+      <li class="banner-item"></li>
+      <li class="banner-item"></li>
+    </ul>
   </section>
 
 
   <section class="cardList">
   </section>
 </body>
+
+<script>
+  //bannerItem 아코디언 이벤트
+  const bannerItem = document.querySelectorAll('.banner-item');
+  for (let i = 0; i < bannerItem.length; i++) {
+    bannerItem[i].addEventListener('click', (e) => {
+      bannerItem.forEach(item => item.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+    });
+    
+  };
+
+</script>
+  
 
 </html>
