@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/index.js"></script>
+    <title>MoviCol</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="./css/main.css">
-  <script type="module" src="./js/index.js"></script>
-  <title>MoviCol</title>
-</head>
+  <body>
+    <header>
+      <h1>MoviCol</h1>
 
-<body>
-  <header>
-    <h1>MoviCol</h1>
+      <form class="inputForm">
+        <input type="text" id="input" />
+        <button id="inputButton">⌕</button>
+      </form>
+    </header>
 
-    <form class="inputForm">
-      <input type="text" id="input">
-      <button id="inputButton">⌕</button>
-    </form>
-  </header>
+    <section class="mainBanner"></section>
 
-  <section class="mainBanner">
-
-  </section>
-
-
-  <section class="cardList">
-  </section>
-</body>
-
+    <section class="movieChartTab_wrap">
+      <div class="tabBtn_wrap">
+        <h3><a href="" class="active" id="btnPOP">인기순</a></h3>
+        <h3><a href="" id="btnUpcoming">상영예정작</a></h3>
+      </div>
+      <section class="cardList">
+        <p class="goDetail">상세보기</p>
+      </section>
+    </section>
+    
+  </body>
 </html>
