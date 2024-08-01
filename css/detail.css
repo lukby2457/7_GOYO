@@ -142,3 +142,24 @@ h1 > a {
 .movie_poster > img {
   width: 300px;
 }
+
+.review_container {
+  width: 100%;
+}
+
+.reviewHeader {
+  background-color: aquamarine;
+}
+
+.reviewInputForm {
+  display: none;
+  background-color: aqua;
+}
+
+.reviews {
+  background-color: lightgreen;
+}
+
+.reviewCard {
+  background-color: yellow;
+}
