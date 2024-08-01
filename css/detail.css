@@ -76,6 +76,11 @@ header > h1 {
   padding: 10px 25px 0 25px;
 }
 
+h1 > a {
+  text-decoration: none;
+  color: var(--color-main);
+}
+
 .inputForm {
   display: flex;
   flex-direction: row;
