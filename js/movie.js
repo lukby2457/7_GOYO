@@ -29,9 +29,6 @@ function createCard(object) {
       <img src="${imgPath + object.poster_path}">
       <h2>${object.title}</h2>
     </div>
-    <p class="overview">
-      ${object.overview}
-    </p>
     <p class="rating">rating : ${object.vote_average}</p>
   `;
 
