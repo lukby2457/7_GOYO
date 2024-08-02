@@ -1,36 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <script type="module" src="./js/index.js"></script>
-    <title>MoviCol</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script type="module" src="./js/index.js"></script>
+  <script type="module" src="./js/mainBanner.js"></script>
+  <title>MoviCol</title>
+</head>
 
-  <body>
-    <header>
-      <h1>MoviCol</h1>
+<body>
+  <header>
+    <h1>MoviCol</h1>
 
-      <form class="inputForm">
-        <input type="text" id="input" />
-        <button id="inputButton">⌕</button>
-      </form>
-    </header>
+    <form class="inputForm">
+      <input type="text" id="input">
+      <button id="inputButton">⌕</button>
+    </form>
+  </header>
 
-    <section class="mainBanner"></section>
+  <section class="mainBanner">
+    <ul>
+      <li class="banner-item active">
+          <iframe src="https://www.youtube.com/embed/C2QCuBX_byg?si=JdmFFcr3ZrtL6F2b&amp;controls=0&autohide=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;"></iframe>
+          <div class="bannerTitle">
+            <h2></h2>
+            <button>상세보기</button>
+          </div>
+        </li>
+      <li class="banner-item">
+        <iframe src="https://www.youtube.com/embed/hjOSU-NqPC8?si=I2epmtijPnyYyh5d&amp;controls=0&autohide=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;"></iframe>
+        <div class="bannerTitle">
+          <h2>BAD BOYS: RIDE OR DIE</h2>
+          <button>상세보기</button>
+        </div>
+      </li>
+      <li class="banner-item"></li>
+      <li class="banner-item"></li>
+      <li class="banner-item"></li>
+    </ul>
+  </section>
 
-    <section class="movieChartTab_wrap">
-      <div class="tabBtn_wrap">
-        <h3><a href="" class="active" id="btnPOP">인기순</a></h3>
-        <h3><a href="" id="btnUpcoming">상영예정작</a></h3>
-      </div>
-      <section class="cardList">
-        <p class="goDetail">상세보기</p>
-      </section>
+
+  <section class="movieChartTab_wrap">
+    <div class="tabBtn_wrap">
+      <h3><a href="" class="active" id="btnPOP">인기순</a></h3>
+      <h3><a href="" id="btnUpcoming">상영예정작</a></h3>
+    </div>
+    <section class="cardList">
+        
     </section>
-    
-  </body>
+  </section>
+</body>
+
+<script>
+  //bannerItem 아코디언 이벤트
+  const bannerItem = document.querySelectorAll('.banner-item');
+  for (let i = 0; i < bannerItem.length; i++) {
+    bannerItem[i].addEventListener('click', (e) => {
+      bannerItem.forEach(item => item.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      // updateIframeAutoplay();
+    });
+  };
+
+
+
+//   function updateIframeAutoplay() {
+//     bannerItem.forEach(item => {
+//       const iframe = item.querySelector('iframe');
+//       if (item.classList.contains('active')) {
+//         // active 클래스가 있는 경우 자동 재생
+//         const src = iframe.getAttribute('src');
+//         const newSrc = src.includes('autoplay=1&') ? src : `${src}autoplay=1&`;
+//         iframe.setAttribute('src', newSrc);
+//       } else {
+//         // active 클래스가 없는 경우 동영상 멈춤
+//         const src = iframe.getAttribute('src');
+//         const newSrc = src.includes('autoplay=1&') ? src.replace('autoplay=1&', '') : src;
+//       }
+//     });
+//   }
+//   updateIframeAutoplay();
+
+// // 예시로 페이지 로드 시 업데이트
+// document.addEventListener('DOMContentLoaded', updateIframeAutoplay);
+
+// // active 클래스를 토글할 때마다 업데이트
+// document.querySelectorAll('.item').forEach(item => {
+//   item.addEventListener('click', () => {
+//     item.classList.toggle('active');
+//     updateIframeAutoplay();
+//   });
+// });
+
+</script>
+  
+
 </html>

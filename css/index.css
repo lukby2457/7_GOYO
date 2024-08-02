@@ -38,7 +38,7 @@ p {
 }
 
 body {
-  width: 1900px;
+  /* width: 1900px; */
   margin: 0 auto;
   background-color: var(--color-back);
 }
@@ -67,7 +67,9 @@ header {
   align-items: center;
   /* background-color: yellow; */
   padding-bottom: 15px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
+  /* margin-bottom: 10px; */
+  width: 1920px;
 }
 
 header > h1 {
@@ -174,6 +176,13 @@ a {
   font-weight: 400;
 
   border-radius: 10px;
+
+  display: none;
+}
+
+/* 카드에 마우스 올리면 카드 앞에 있는 goDetail이 보임 */
+.card:hover ~ .goDetail {
+  display: block;
 }
 
 .card img {
