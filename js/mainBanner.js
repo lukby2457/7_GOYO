@@ -40,6 +40,7 @@ const optionsBanner = {
   async function bannerMovie() {
     const mvApi = await fetchMovie();//fetchMovie함수 담기
     const bannerItem = document.querySelectorAll('.banner-item');
+    const bannerTitle = document.querySelectorAll('.bannerTitle h2');
 
     bannerItem.forEach((item,index) => { //배너수만큼 반복
         if(index < mvApi.length){ //아이템의 수가 mvApi수보다 적을때 실행해
@@ -52,6 +53,9 @@ const optionsBanner = {
               itemVideoBox.classList.add('itemVideoBox');
               itemVideo.classList.add('itemVideo');
 
+              if(bannerTitle[index]){
+                bannerTitle[index].textContent = `${idx.title}`
+              };
 
             moviesItemCreate.innerHTML = `
                 <img src="https://image.tmdb.org/t/p/w500${idx.poster_path}" alt="${idx.title}">

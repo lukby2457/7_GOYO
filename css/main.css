@@ -15,7 +15,7 @@
     height: 100%;
     transition: all 0.5s;
     cursor: pointer;
-    opacity: 0.2;
+    background-color: black;
     overflow: hidden;
 }
 .mainBanner ul li.active{
@@ -52,7 +52,7 @@
     font-weight: bold;
     margin: 40px 0;
     transform-origin: left;
-    animation: scale 3s  forwards;
+    animation: scale 2s forwards;
 }
 
 @keyframes scale{
@@ -63,27 +63,36 @@
         transform: scale(1);
     }
 }
-
+.mainBanner ul li .bannerTitle{
+    display: none;
+}
+.mainBanner ul li.active .bannerTitle{
+    display: block;
+}
 .mainBanner ul li.active .bannerTitle button{
-    padding: 20px;
+    padding: 15px 40px;
+    border-radius: 5px;
     background-color: #fff;
     color: black;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
 }
 
 .mainBanner ul .b-item h2{
     color: #fff;
     position: absolute;
-    bottom: 0;
+    /* top: 80%; */
     transform: rotate(270deg);
-    width: 100%;
+    transform-origin: center;
+    width: 200%;
     text-align: start;
+    font-size: 35px;
+    letter-spacing: 1.8px;
 }
 .mainBanner ul .b-item img{
     height: 100%;
     object-fit: cover;
+    opacity: 0.2;
 }
-.mainBanner ul li:nth-child(1){background-color: aliceblue;}
-.mainBanner ul li:nth-child(2){background-color: rgb(181, 215, 243);}
-.mainBanner ul li:nth-child(3){background-color: rgb(134, 192, 242);}
-.mainBanner ul li:nth-child(4){background-color: rgb(86, 170, 243);}
-.mainBanner ul li:nth-child(5){background-color: rgb(24, 142, 245);}
