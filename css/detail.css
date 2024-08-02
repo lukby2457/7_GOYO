@@ -144,12 +144,13 @@ h1 > a {
 }
 
 .review_container {
-  width: 1850px;
+  width: 1875px;
   margin-left: 25px;
 }
 
 .reviewHeader {
   /* background-color: aquamarine; */
+  width: 1850px;
   display: flex;
   justify-content: space-between;
   color: white;
@@ -184,6 +185,7 @@ h1 > a {
 
 .reviewInputForm {
   display: none;
+  width: 1850px;
   background-color: lightgray;
 }
 
@@ -268,7 +270,7 @@ h1 > a {
   /* background-color: lightgreen; */
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .reviewCard {
@@ -276,6 +278,7 @@ h1 > a {
   width: 580px;
   min-height: 150px;
   margin-bottom: 25px;
+  margin-right: 25px;
   padding: 10px;
 }
 
