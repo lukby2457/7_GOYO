@@ -21,6 +21,13 @@
 .mainBanner ul li.active{
     width: 68vw;
     opacity: 1;
+    position: relative;
+}
+.mainBanner ul li iframe{
+    display: none;
+}
+.mainBanner ul li.active iframe{
+    display: block;
 }
 .mainBanner ul li .b-item{
     position: relative;
@@ -29,6 +36,40 @@
     align-items: center;
     height: 100%;
 }
+.mainBanner ul li.active .b-item > img,
+.mainBanner ul li.active .b-item > h2{
+    display: none;
+}
+.mainBanner ul li.active .bannerTitle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 4% 4%;
+}
+.mainBanner ul li.active .bannerTitle h2{
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    margin: 40px 0;
+    transform-origin: left;
+    animation: scale 3s  forwards;
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.mainBanner ul li.active .bannerTitle button{
+    padding: 20px;
+    background-color: #fff;
+    color: black;
+}
+
 .mainBanner ul .b-item h2{
     color: #fff;
     position: absolute;
