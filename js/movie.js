@@ -25,6 +25,7 @@ function createCard(object) {
   card.className = 'card';
   card.id = `${object.id}`;
   card.innerHTML = `
+    <button class="goDetail">상세보기</button>
     <div>
       <img src="${imgPath + object.poster_path}">
       <h2>${object.title}</h2>
