@@ -34,8 +34,10 @@
     </section>
     <section class="review_container">
       <div class="reviewHeader">
-        <h2>리뷰 한줄평</h2>
-        <h2 class="reviewCount"></h2>
+        <div>
+          <h2>리뷰 한줄평</h2>
+          <h2 class="reviewCount"></h2>
+        </div>
         <button class="openReviewInput">실관람평 쓰기</button>
       </div>
       <div class="reviewInputForm">
@@ -43,9 +45,17 @@
           <div>
             <input type="text" id="username" placeholder="작성자">
             <input type="password" id="password" placeholder="비밀번호 설정">
+            <p>'영화 제목' 영화 어떠셨나요?</p>
             <input type="text" id="review">
+            <p>관람포인트를 선택해주세요</p>
+            <input type="checkbox" id="영상미" name="reviewPoint" value="영상미"/>
+            <label for="영상미" class="영상미">영상미</label>
+            <input type="checkbox" id="연출" name="reviewPoint" value="연출"/>
+            <label for="연출">연출</label>
+            <input type="checkbox" id="스토리" name="reviewPoint" value="스토리"/>
+            <label for="스토리">스토리</label>
           </div>
-          <div>
+          <div class="inputFormButtons">
             <button class="close">X</button>
             <button class="submit">작성하기</button>
           </div>

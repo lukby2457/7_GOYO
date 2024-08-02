@@ -10,18 +10,24 @@ function getReviews(id) {
 
 function createReview(arr, position) {
   arr.forEach((review) => {
+    let hash = '';
+    let checkedArr = (review.checkedArr.length === 0) ? [] : review.checkedArr;
+    for(let i = 0; i < checkedArr.length; i++) {
+      hash += `#${checkedArr[i]}  `;
+    }
+
     const div = document.createElement('div');
     div.className = 'reviewCard';
     div.innerHTML = `
-      <div>
+      <div class="reviewCardButtons">
         <button>수정</button>
         <p>|</p>
         <button>삭제</button>
       </div>
       <h4>${review.username}</h4>
-      <p>${review.review}</p>
-      <p></p>
-      <p>${review.dateFormat}</p>
+      <p class="reviewBox">${review.review}</p>
+      <p class="sizeDown">${hash}</p>
+      <p class="sizeDown">${review.dateFormat}</p>
     `;
 
     position.appendChild(div);
@@ -32,6 +38,17 @@ export function createReviews(id) {
   let username = document.querySelector('#username').value;
   let password = document.querySelector('#password').value;
   let review = document.querySelector('#review').value;
+  let checked = document.querySelectorAll('input[name=reviewPoint]');
+  let checkedArr = [];
+
+  // 관람포인트 체크 여부 확인 및 저장
+  checked.forEach((hashTag) => {
+    if(hashTag.checked) {
+      checkedArr.push(hashTag.value);
+    }
+  });
+
+  // 작성 날짜 저장
   let date = new Date();
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -41,7 +58,7 @@ export function createReviews(id) {
   let idReviews = getReviews(id);
 
   let reviewObject = {
-    username, password, review, dateFormat
+    username, password, review, checkedArr, dateFormat
   };
 
   idReviews.push(reviewObject);
