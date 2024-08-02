@@ -178,6 +178,7 @@ a {
   display: none;
 }
 
+/* 카드에 마우스 올리면 카드 앞에 있는 goDetail이 보임 */
 .card:hover ~ .goDetail {
   display: block;
 }
