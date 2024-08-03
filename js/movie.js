@@ -25,13 +25,17 @@ function createCard(object) {
   card.className = 'card';
   card.id = `${object.id}`;
   card.innerHTML = `
-    <button class="goDetail">상세보기</button>
-    <div>
-      <img src="${imgPath + object.poster_path}">
-      <h2>${object.title}</h2>
+    <div class="cardWrap">
+      <div>
+        <img src="${imgPath + object.poster_path}">
+        <h2>${object.title}</h2>
+      </div>
+      <p class="rating">rating : ${object.vote_average}</p>
     </div>
-    <p class="rating">rating : ${object.vote_average}</p>
-  `;
+    <div class="datialBtnWrap">
+      <button class="goDetail">상세보기</button>
+    </div>
+    `;
 
   card.addEventListener("click", () => {
     alert(`영화 id : ${object.id}`);
