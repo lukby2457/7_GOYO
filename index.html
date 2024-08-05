@@ -31,15 +31,33 @@
           </div>
         </li>
       <li class="banner-item">
-        <iframe src="https://www.youtube.com/embed/hjOSU-NqPC8?si=I2epmtijPnyYyh5d&amp;controls=0&autohide=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;"></iframe>
+        <iframe src="https://www.youtube.com/embed/4ycxumdqUnY?si=kkwOGBFzyqvjLeW8&amp;controls=0&autohide=1&rel=0" " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;"></iframe>
         <div class="bannerTitle">
-          <h2>BAD BOYS: RIDE OR DIE</h2>
+          <h2></h2>
           <button>상세보기</button>
         </div>
       </li>
-      <li class="banner-item"></li>
-      <li class="banner-item"></li>
-      <li class="banner-item"></li>
+      <li class="banner-item">
+        <iframe src="https://www.youtube.com/embed/hjOSU-NqPC8?si=I2epmtijPnyYyh5d&amp;controls=0&autohide=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;"></iframe>
+        <div class="bannerTitle">
+          <h2></h2>
+          <button>상세보기</button>
+        </div>
+      </li>
+      <li class="banner-item">
+        <iframe src="https://www.youtube.com/embed/EiCmnIaj4u8?si=v5IaPJLzW2IoUfMA&amp;controls=0&autohide=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;"></iframe>
+        <div class="bannerTitle">
+          <h2></h2>
+          <button>상세보기</button>
+        </div>
+      </li>
+      <li class="banner-item">
+        <iframe src="https://www.youtube.com/embed/g1NL-Px92k4?si=GzsvQqvPO-01QWwv&amp;controls=0&autohide=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;"></iframe>
+        <div class="bannerTitle">
+          <h2></h2>
+          <button>상세보기</button>
+        </div>
+      </li>
     </ul>
   </section>
 
@@ -55,39 +73,8 @@
     bannerItem[i].addEventListener('click', (e) => {
       bannerItem.forEach(item => item.classList.remove('active'));
       e.currentTarget.classList.add('active');
-      // updateIframeAutoplay();
     });
   };
-
-
-
-//   function updateIframeAutoplay() {
-//     bannerItem.forEach(item => {
-//       const iframe = item.querySelector('iframe');
-//       if (item.classList.contains('active')) {
-//         // active 클래스가 있는 경우 자동 재생
-//         const src = iframe.getAttribute('src');
-//         const newSrc = src.includes('autoplay=1&') ? src : `${src}autoplay=1&`;
-//         iframe.setAttribute('src', newSrc);
-//       } else {
-//         // active 클래스가 없는 경우 동영상 멈춤
-//         const src = iframe.getAttribute('src');
-//         const newSrc = src.includes('autoplay=1&') ? src.replace('autoplay=1&', '') : src;
-//       }
-//     });
-//   }
-//   updateIframeAutoplay();
-
-// // 예시로 페이지 로드 시 업데이트
-// document.addEventListener('DOMContentLoaded', updateIframeAutoplay);
-
-// // active 클래스를 토글할 때마다 업데이트
-// document.querySelectorAll('.item').forEach(item => {
-//   item.addEventListener('click', () => {
-//     item.classList.toggle('active');
-//     updateIframeAutoplay();
-//   });
-// });
 
 </script>
   

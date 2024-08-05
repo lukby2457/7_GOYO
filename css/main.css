@@ -86,9 +86,9 @@
     /* top: 80%; */
     transform: rotate(270deg);
     transform-origin: center;
-    width: 200%;
+    width: max-content;
     text-align: start;
-    font-size: 35햣px;
+    font-size: 35px;
     letter-spacing: 1.8px;
 }
 .mainBanner ul .b-item img{

@@ -23,18 +23,6 @@ const optionsBanner = {
     }
    
   }
-//특정영화 클립영상 가져오는 기능
-  // async function videoData(movieId) {
-  //   try {
-  //     const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, optionsBanner);
-  //     const data = await response.json();
-  //     console.log('fetchMovie data:', data.results); // 영화 데이터 콘솔 출력
-  //     const trailer = data.results.find(video => video.type === 'Trailer')//(임시)
-  //     console.log('Trailer:', trailer); // 트레일러 데이터 콘솔 출력
-  //   } catch (err) {
-  //     console.error('Error', err);
-  //   }
-  // }
 
 //각 배너아이템에 정보넣기
   async function bannerMovie() {
