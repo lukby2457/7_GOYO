@@ -59,3 +59,22 @@ const optionsBanner = {
   }
 
   bannerMovie()
+
+  async function bannerDetail() {
+    const mvApi = await fetchMovie();
+    const detailBtn = document.querySelectorAll('.detailBtn');
+    detailBtn.forEach((item,index)=>{
+      const idx = mvApi[index];
+      const url = new URL("http://127.0.0.1:5502/detail.html");
+      detailBtn[index].addEventListener('click', (e) => {
+        const detailUrl = `${url.href}?id=${idx.id}`
+        window.open(detailUrl, '_blank'); 
+
+        console.log(`클릭클릭 : ${index}${idx.id}${detailUrl}`)
+      })
+    });
+
+  };
+  bannerDetail()
+
+  
