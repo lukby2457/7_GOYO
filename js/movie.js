@@ -36,7 +36,7 @@ function createCard(object) {
       <p class="rating">rating : ${object.vote_average}</p>
     </div>
     <div class="detailBtnWrap">
-      <button onclick="location.href='detail.html' " class="goDetail">상세보기</button>
+      <button onclick="location.href='detail.html?id=${object.id}'" class="goDetail">상세보기</button>
     </div>
     `;
 
