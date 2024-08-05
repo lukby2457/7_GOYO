@@ -8,6 +8,19 @@ function getReviews(id) {
   }
 }
 
+function getUsernameArr(arr) {
+  let usernameArr = [];
+
+  if(arr.length !== 0) {
+    for(const review of arr) {
+      usernameArr.push(review.username);
+    }
+    return usernameArr;
+  } else {
+    return usernameArr;
+  }
+}
+
 function getOneReview(id, username) {
   let reviewArr = getReviews(id);
 
@@ -104,17 +117,27 @@ export function createReviews(id) {
   let day = date.getDate();
   let dateFormat = `${year}.${month}.${day}`;
   
-  let idReviews = getReviews(id);
+  let reviewArr = getReviews(id);
+  let usernameArr = getUsernameArr(reviewArr);
 
-  let reviewObject = {
-    username, password, review, checkedArr, dateFormat
-  };
+  if(username !== '' && password !== '' && review !== '') {
+    if(!usernameArr.includes(username)) {
+      let reviewObject = {
+        username, password, review, checkedArr, dateFormat
+      };
 
-  idReviews.push(reviewObject);
+      reviewArr.push(reviewObject);
 
-  localStorage.setItem(id, JSON.stringify(idReviews));
+      localStorage.setItem(id, JSON.stringify(reviewArr));
 
-  history.go(0);
+      alert("리뷰 입력이 완료되었습니다.");
+      history.go(0);
+    } else {
+      alert("같은 이름을 가진 작성자가 이미 존재합니다.");
+    }
+  } else {
+    alert("필수 입력 사항에 입력을 하지 않았습니다. 다시 한번 확인해주세요!");
+  }
 }
 
 export function loadReviews(id) {
