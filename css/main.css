@@ -96,3 +96,7 @@
     object-fit: cover;
     opacity: 0.2;
 }
+
+.ytp-chrome-top{
+    display: none;
+}
