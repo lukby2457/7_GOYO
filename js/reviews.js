@@ -23,6 +23,7 @@ function createReview(data) {
   deleteBtn.value = `${data.username}`;
   deleteBtn.innerHTML = '삭제';
 
+  console.log(deleteBtn);
   deleteBtn.addEventListener("click", () => {
     alert(deleteBtn.value);
   });
