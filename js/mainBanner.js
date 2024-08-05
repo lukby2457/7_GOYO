@@ -23,18 +23,6 @@ const optionsBanner = {
     }
    
   }
-//특정영화 클립영상 가져오는 기능
-  // async function videoData(movieId) {
-  //   try {
-  //     const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, optionsBanner);
-  //     const data = await response.json();
-  //     console.log('fetchMovie data:', data.results); // 영화 데이터 콘솔 출력
-  //     const trailer = data.results.find(video => video.type === 'Trailer')//(임시)
-  //     console.log('Trailer:', trailer); // 트레일러 데이터 콘솔 출력
-  //   } catch (err) {
-  //     console.error('Error', err);
-  //   }
-  // }
 
 //각 배너아이템에 정보넣기
   async function bannerMovie() {
@@ -71,3 +59,22 @@ const optionsBanner = {
   }
 
   bannerMovie()
+
+  async function bannerDetail() {
+    const mvApi = await fetchMovie();
+    const detailBtn = document.querySelectorAll('.detailBtn');
+    detailBtn.forEach((item,index)=>{
+      const idx = mvApi[index];
+      const url = new URL("http://127.0.0.1:5502/detail.html"); //로컬주소라 추후 도메인변경해야함
+      detailBtn[index].addEventListener('click', (e) => {
+        const detailUrl = `${url.href}?id=${idx.id}`
+        window.open(detailUrl, '_blank'); 
+
+        console.log(`클릭클릭 : ${index}${idx.id}${detailUrl}`)
+      })
+    });
+
+  };
+  bannerDetail()
+
+  
