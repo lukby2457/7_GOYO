@@ -8,30 +8,38 @@ function getReviews(id) {
   }
 }
 
-function createReview(arr, position) {
-  arr.forEach((review) => {
-    let hash = '';
-    let checkedArr = (review.checkedArr.length === 0) ? [] : review.checkedArr;
-    for(let i = 0; i < checkedArr.length; i++) {
-      hash += `#${checkedArr[i]}  `;
-    }
+function createReview(data) {
+  let hash = '';
+  let checkedArr = (data.checkedArr.length === 0) ? [] : data.checkedArr;
+  for(let i = 0; i < checkedArr.length; i++) {
+    hash += `#${checkedArr[i]}  `;
+  };
 
-    const div = document.createElement('div');
-    div.className = 'reviewCard';
-    div.innerHTML = `
-      <div class="reviewCardButtons">
-        <button>수정</button>
-        <p>|</p>
-        <button>삭제</button>
-      </div>
-      <h4>${review.username}</h4>
-      <p class="reviewBox">${review.review}</p>
-      <p class="sizeDown">${hash}</p>
-      <p class="sizeDown">${review.dateFormat}</p>
-    `;
+  const buttonDiv = document.createElement('div');
+  buttonDiv.className = 'reviewCardButtons';
 
-    position.appendChild(div);
-  })
+  const deleteBtn = document.createElement('button');
+  deleteBtn.className = 'deleteBtn';
+  deleteBtn.value = `${data.username}`;
+  deleteBtn.innerHTML = '삭제';
+
+  deleteBtn.addEventListener("click", () => {
+    alert(deleteBtn.value);
+  });
+
+  buttonDiv.appendChild(deleteBtn);
+
+  const div = document.createElement('div');
+  div.className = 'reviewCard';
+  div.appendChild(buttonDiv);
+  div.innerHTML += `
+    <h4>${data.username}</h4>
+    <p class="reviewBox">${data.review}</p>
+    <p class="sizeDown">${hash}</p>
+    <p class="sizeDown">${data.dateFormat}</p>
+  `;
+
+  return div;
 }
 
 export function createReviews(id) {
@@ -77,5 +85,8 @@ export function loadReviews(id) {
 
   countPosition.innerHTML = length;
 
-  createReview(reviewArr, reviewPosition);
+  reviewArr.forEach((data) => {
+    const card = createReview(data);
+    reviewPosition.appendChild(card);
+  });
 }
