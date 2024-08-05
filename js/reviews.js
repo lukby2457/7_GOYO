@@ -1,11 +1,8 @@
 function getReviews(id) {
   let reviews = localStorage.getItem(id);
 
-  if (reviews) {
-    return JSON.parse(reviews);
-  } else {
-    return [];
-  }
+  if (reviews) return JSON.parse(reviews);
+  else return [];
 }
 
 function getUsernameArr(arr) {
@@ -16,18 +13,14 @@ function getUsernameArr(arr) {
       usernameArr.push(review.username);
     }
     return usernameArr;
-  } else {
-    return usernameArr;
-  }
+  } else return usernameArr;
 }
 
 function getOneReview(id, username) {
   let reviewArr = getReviews(id);
 
   for(const one of reviewArr) {
-    if(one.username === username) {
-      return one;
-    }
+    if(one.username === username) return one;
   }
 }
 
@@ -52,20 +45,20 @@ function createReview(data, id) {
     let reviewArr = getReviews(id);
     let usernameReview = getOneReview(id, deleteBtn.value);
     
-    if(inputPassword === usernameReview.password) {
-      reviewArr.forEach((item, index) => {
-        if(item.username === deleteBtn.value) {
-          reviewArr.splice(index, 1);
-        }
-      });
-
-      localStorage.setItem(id, JSON.stringify(reviewArr));
-
-      alert("리뷰 삭제가 완료되었습니다");
-      history.go(0);
-    } else {
-      alert("패스워드가 일치하지 않습니다. 다시 한번 확인해주세요");
-    }
+    if(inputPassword !== null) {
+      if(inputPassword === usernameReview.password) {
+        if(confirm("정말로 삭제하시겠습니까?")) {
+          reviewArr.forEach((item, index) => {
+            if(item.username === deleteBtn.value) reviewArr.splice(index, 1);
+          });
+    
+          localStorage.setItem(id, JSON.stringify(reviewArr));
+    
+          alert("리뷰 삭제가 완료되었습니다");
+          history.go(0);
+        } else alert("삭제가 취소되었습니다");
+      } else alert("패스워드가 일치하지 않습니다. 다시 한번 확인해주세요");
+    } else alert("패스워드 입력을 취소하셨습니다");
   });
 
   buttonDiv.appendChild(deleteBtn);
@@ -105,9 +98,7 @@ export function createReviews(id) {
 
   // 관람포인트 체크 여부 확인 및 저장
   checked.forEach((hashTag) => {
-    if(hashTag.checked) {
-      checkedArr.push(hashTag.value);
-    }
+    if(hashTag.checked) checkedArr.push(hashTag.value);
   });
 
   // 작성 날짜 저장
@@ -132,12 +123,8 @@ export function createReviews(id) {
 
       alert("리뷰 입력이 완료되었습니다.");
       history.go(0);
-    } else {
-      alert("같은 이름을 가진 작성자가 이미 존재합니다.");
-    }
-  } else {
-    alert("필수 입력 사항에 입력을 하지 않았습니다. 다시 한번 확인해주세요!");
-  }
+    } else alert("같은 이름을 가진 작성자가 이미 존재합니다.");
+  } else alert("필수 입력 사항에 입력을 하지 않았습니다. 다시 한번 확인해주세요!");
 }
 
 export function loadReviews(id) {
