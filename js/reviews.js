@@ -8,7 +8,17 @@ function getReviews(id) {
   }
 }
 
-function createReview(data) {
+function getOneReview(id, username) {
+  let reviewArr = getReviews(id);
+
+  for(const one of reviewArr) {
+    if(one.username === username) {
+      return one;
+    }
+  }
+}
+
+function createReview(data, id) {
   let hash = '';
   let checkedArr = (data.checkedArr.length === 0) ? [] : data.checkedArr;
   for(let i = 0; i < checkedArr.length; i++) {
@@ -25,7 +35,24 @@ function createReview(data) {
 
   console.log(deleteBtn);
   deleteBtn.addEventListener("click", () => {
-    alert(deleteBtn.value);
+    let inputPassword = prompt('작성하실 때 입력하신 패스워드를 입력해주세요');
+    let reviewArr = getReviews(id);
+    let usernameReview = getOneReview(id, deleteBtn.value);
+    
+    if(inputPassword === usernameReview.password) {
+      reviewArr.forEach((item, index) => {
+        if(item.username === deleteBtn.value) {
+          reviewArr.splice(index, 1);
+        }
+      });
+
+      localStorage.setItem(id, JSON.stringify(reviewArr));
+
+      alert("리뷰 삭제가 완료되었습니다");
+      history.go(0);
+    } else {
+      alert("패스워드가 일치하지 않습니다. 다시 한번 확인해주세요");
+    }
   });
 
   buttonDiv.appendChild(deleteBtn);
@@ -33,12 +60,25 @@ function createReview(data) {
   const div = document.createElement('div');
   div.className = 'reviewCard';
   div.appendChild(buttonDiv);
-  div.innerHTML += `
-    <h4>${data.username}</h4>
-    <p class="reviewBox">${data.review}</p>
-    <p class="sizeDown">${hash}</p>
-    <p class="sizeDown">${data.dateFormat}</p>
-  `;
+
+  const usernameH4 = document.createElement('h4');
+  usernameH4.innerHTML = `${data.username}`;
+  div.appendChild(usernameH4);
+
+  const reviewP = document.createElement('p');
+  reviewP.className = 'reviewBox';
+  reviewP.innerHTML = `${data.review}`;
+  div.appendChild(reviewP);
+
+  const hashTagP = document.createElement('p');
+  hashTagP.className = 'sizeDown';
+  hashTagP.innerHTML = `${hash}`;
+  div.appendChild(hashTagP);
+
+  const dateP = document.createElement('p');
+  dateP.className = 'sizeDown';
+  dateP.innerHTML = `${data.dateFormat}`;
+  div.appendChild(dateP);
 
   return div;
 }
@@ -87,7 +127,7 @@ export function loadReviews(id) {
   countPosition.innerHTML = length;
 
   reviewArr.forEach((data) => {
-    const card = createReview(data);
+    const card = createReview(data, id);
     reviewPosition.appendChild(card);
   });
 }
