@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/detail.css" />
+    <script type="module" src="./js/detail.js"></script>
+    <title>movieDetail</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="./index.html">MoviCol</a></h1>
+
+      <form class="inputForm">
+        <input type="text" id="input" />
+        <button id="inputButton">⌕</button>
+      </form>
+    </header>
+    <section class="movie_detail_container">
+      <div class="movie_detail_container_wrap">
+        <div class="movie_info">
+          <p>장르: <span id="movie_genres"></span></p>
+          <h1 id="movie_title"></h1>
+          <p>
+            개봉일: <span id="movie_release"></span>│ 평점:
+            <span id="movie_vote"></span>
+          </p>
+          <p id="movie_overview"></p>
+        </div>
+        <div class="movie_poster_wrap"></div>
+      </div>
+    </section>
+    <section class="review_container">
+      <div class="reviewHeader">
+        <div>
+          <h2>리뷰 한줄평</h2>
+          <h2 class="reviewCount"></h2>
+        </div>
+        <button class="openReviewInput">실관람평 쓰기</button>
+      </div>
+      <div class="reviewInputForm">
+        <form class="reviewInput">
+          <div>
+            <input type="text" id="username" placeholder="작성자">
+            <input type="password" id="password" placeholder="비밀번호 설정">
+            <p>'영화 제목' 영화 어떠셨나요?</p>
+            <input type="text" id="review">
+            <p>관람포인트를 선택해주세요</p>
+            <input type="checkbox" id="영상미" name="reviewPoint" value="영상미"/>
+            <label for="영상미" class="영상미">영상미</label>
+            <input type="checkbox" id="연출" name="reviewPoint" value="연출"/>
+            <label for="연출">연출</label>
+            <input type="checkbox" id="스토리" name="reviewPoint" value="스토리"/>
+            <label for="스토리">스토리</label>
+          </div>
+          <div class="inputFormButtons">
+            <button class="close">X</button>
+            <button class="submit">작성하기</button>
+          </div>
+        </form>
+      </div>
+      <div class="reviews">
+        
+      </div>
+    </section>
+  </body>
+</html>
