@@ -158,31 +158,65 @@ a {
 
 .card:hover {
   border: 2px solid var(--color-main);
-  border-radius: 0;
+  border-radius: 15;
   width: 346px;
-  cursor: pointer;
+
+  filter: grayscale(90%);
+}
+.cardWrap {
+  position: relative;
+}
+
+.datialBtnWrap {
+  width: 346px;
+  height: 625px;
+  margin-bottom: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+  position: absolute;
 }
 
 .goDetail {
   background-color: white;
+  border: none;
+  border-radius: 10px;
 
-  width: 310px;
-  height: 80px;
-  margin: 150px 15px;
+  width: 250px;
+  height: 75px;
 
   text-align: center;
   line-height: 80px;
   font-size: 30px;
-  font-weight: 400;
-
-  border-radius: 10px;
-
-  display: none;
+  font-weight: 450;
 }
 
-/* 카드에 마우스 올리면 카드 앞에 있는 goDetail이 보임 */
-.card:hover ~ .goDetail {
+.card:hover > .datialBtnWrap {
   display: block;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goDetail:hover {
+  cursor: pointer;
+  filter: grayscale(90%);
+
+  box-shadow: 0px 0px 6px 4px #468fe1 inset;
+  transition-duration: 0.15s;
+}
+
+.btnWrap {
+  width: 346px;
+  height: 611px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card img {
