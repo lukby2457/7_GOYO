@@ -157,9 +157,67 @@ h1 > a {
   font-weight: bold;
 }
 
+/*credits css*/
+.credits {
+  width: 1400px;
+  margin: auto;
+}
+.credits > h1 {
+  color: #fff;
+  font-size: 24px;
+  margin: 50px 0 30px 20px;
+}
+.credits_wrap {
+  overflow: auto;
+  display: flex;
+  width: 1400px;
+  height: 210px;
+  margin: auto;
+  text-align: center;
+}
+
+.credits_card {
+  margin-right: 20px;
+}
+
+.credits_card > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 20px;
+  border-radius: 50%;
+}
+.credits_card > h2 {
+  margin: 10px 0 10px 0;
+  color: var(--color-main);
+  font-size: 18px;
+}
+.credits_card > span {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/*스크롤*/
+.credits_wrap::-webkit-scrollbar {
+  height: 10px;
+}
+.credits_wrap::-webkit-scrollbar-thumb {
+  background-color: var(--color-main);
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.credits_wrap::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/*================*/
+
 .review_container {
   width: 1875px;
   margin-left: 25px;
+  padding: 80px 0;
 }
 
 .reviewHeader {
