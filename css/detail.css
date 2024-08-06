@@ -29,7 +29,7 @@
 .movie_poster_wrap > img {
   width: 300px;
   /* animation */
-  display: none; 
+  display: none;
   opacity: 0;
   transition: all 10s ease-in-out;
 }
@@ -83,12 +83,12 @@
   cursor: pointer;
 }
 
-@keyframes target{
-  0%{
-      transform: scale(1);
+@keyframes target {
+  0% {
+    transform: scale(1);
   }
-  100%{
-      transform: scale(1.2);
+  100% {
+    transform: scale(1.2);
   }
 }
 
@@ -98,7 +98,13 @@
   object-fit: cover;
   margin: 0 20px;
   border-radius: 50%;
-}
+} /*
+.credits_card > .noImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+}*/
 .credits_card > h2 {
   margin: 10px 0 10px 0;
   color: var(--color-main);
@@ -180,16 +186,15 @@
   cursor: pointer;
   animation: bgChange 0.2s forwards;
 }
-@keyframes bgChange{
-  0%{
-      background-color: transparent;
+@keyframes bgChange {
+  0% {
+    background-color: transparent;
   }
-  100%{
+  100% {
     background-color: #fff;
     color: #000;
   }
 }
-
 
 .reviewInputForm {
   display: none;
@@ -255,14 +260,14 @@
   background-color: transparent;
   width: 10px;
 }
-.close ion-icon{
+.close ion-icon {
   font-size: 20px;
 }
 
 .close:hover {
   cursor: pointer;
 }
-.inputFormTitle{
+.inputFormTitle {
   padding-top: 30px;
 }
 .submit {
@@ -275,7 +280,7 @@
   color: white;
   border-radius: 26px;
 }
-.pointHash{
+.pointHash {
   padding-top: 30px;
 }
 
@@ -298,7 +303,7 @@
   min-height: 150px;
   padding: 20px 40px 40px;
 }
-.reviewCard > h4{
+.reviewCard > h4 {
   padding: 10px 0;
   border-bottom: 2px solid #000;
   font-weight: bold;
@@ -333,28 +338,28 @@
   font-size: 13px;
   cursor: pointer;
 }
-.hash{
-  color: #3b843b!important;
+.hash {
+  color: #3b843b !important;
   font-size: 17px;
   font-weight: 600;
-  font-family: 'NEXON Lv2 Gothic';
+  font-family: "NEXON Lv2 Gothic";
 }
 @media screen and (max-width: 1920px) {
-  .review_container{
+  .review_container {
     width: 95%;
   }
 }
 @media screen and (max-width: 1024px) {
-  .movie_detail_container_wrap{
+  .movie_detail_container_wrap {
     flex-direction: column-reverse;
     gap: 20px;
   }
-  .movie_poster_wrap{
+  .movie_poster_wrap {
     display: flex;
     justify-content: center;
     padding: 5%;
   }
-  .movie_info{
+  .movie_info {
     padding: 30px 0;
   }
 }

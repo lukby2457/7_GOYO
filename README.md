@@ -55,12 +55,23 @@ http://sss.com
 
 <details>
 <summary>영화상세정보 및 출연진</summary>
- - *Write here!*<br>
- - *Write here!*
+ - Detail API(https://developer.themoviedb.org/reference/movie-details)를 이용해 영화 상세 정보를 불러와 화면에 표시<br>
+ - Credits API(https://developer.themoviedb.org/reference/movie-credits)를 이용해 영화의 출연진 정보를 불러와 화면에 15개만 표시
 </details>
 
 <br>
 
 ## 💡 어려웠던 점, 해결한 내용
 
+#### 홍연주
+
+- 사소??한 실수를 찾는것이 제일 어려웠습니다<br>
+  (세미콜론을 잘못 집어넣음, 변수명을 잘못 작성함, 함수에 return을 빼먹음, fetch에 options를 삭제해서 계속 api 오류가 뜸)<br>
+- 여기저기서 찾아본 내용으로 코드를 짜다가 중복되는 코드, 필요없는 코드들이 생겨도 깔끔하게 합치는 것이 어려웠습니다.
+  <br>
+
 ## 🎤 소감
+
+#### 홍연주
+
+좋은 분들을 만나 같이 개발하고 공유하는 과정에서 정말 많이 배웠습니다(특히 깃 사용법) 힘들었지만 뿌듯합니다
