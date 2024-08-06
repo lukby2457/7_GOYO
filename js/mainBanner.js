@@ -68,11 +68,7 @@ const optionsBanner = {
       const idx = mvApi[index];
       const url = "./detail.html";
       detailBtn[index].addEventListener('click', (e) => {
-<<<<<<< HEAD
-        const detailUrl = `${url.href}?id=${idx.id}`
-=======
         const detailUrl = `${url}?id=${idx.id}`
->>>>>>> ac32d2a979431ab0dc70c8c4ee0b87571542d900
         window.open(detailUrl, '_self'); 
 
         console.log(`클릭클릭 : ${index}${idx.id}${detailUrl}`)
