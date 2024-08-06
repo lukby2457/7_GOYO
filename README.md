@@ -42,13 +42,19 @@ http://sss.com
 
 <details>
 <summary>와이어프레임 제작</summary>
-- *Write here!*<br>
-- *Write here!*
+- 의견취합하여 피그마로 와이어프레임 제작<br>
 </details>
 <details>
 <summary>메인페이지 배너</summary>
-- *Write here!*<br>
-- *Write here!*
+- 일정간격의 배너형태에서 active배너만 영상 및 영화제목 노출<br>
+- 영상은 Api에서 제공하지않아 유튜브 영상 삽입<br>
+- 영상플레이 중 다른배너 클릭시 영상중지<br>
+- 상세보기 클릭시 해당detail페이지로 이동
+</details>
+<details>
+<summary>전체 디자인 결 수정</summary>
+- main, detail 디자인 통일되게 수정<br>
+- 평점 소수점1자리까지만 노출되게 추가
 </details>
 
 ### 홍연주
