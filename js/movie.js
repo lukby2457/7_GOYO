@@ -1,7 +1,7 @@
 // TMDB에서 Top Rated 20개 들고오는 function
 export function loadCards(location, options, arr1, arr2) {
   fetch(
-    "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+    "https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1",
     options
   )
     .then((response) => response.json())

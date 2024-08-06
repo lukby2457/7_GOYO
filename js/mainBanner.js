@@ -14,7 +14,7 @@ const optionsBanner = {
 //영화정보 가져오는 기능
   async function fetchMovie() { 
     try {//try catch문
-        const response = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', optionsBanner);
+        const response = await fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', optionsBanner);
         const data = await response.json();
         console.log(data)
         return data.results;

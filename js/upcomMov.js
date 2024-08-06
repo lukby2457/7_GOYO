@@ -1,7 +1,7 @@
 // TMDB에서 Upcoming 20개 들고오는 function
 export function loadUpcomingCards(location, options, arr1, arr2) {
   fetch(
-    'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
+    'https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1',
     options
   )
   .then(response => response.json())
