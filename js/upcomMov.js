@@ -30,7 +30,7 @@ export function loadUpcomingCards(location, options, arr1, arr2) {
     upcomingCard.innerHTML = `
       <div class="cardWrap">
         <div>
-          <img src="${imgPath + object.poster_path}">
+          <div class="imgSizeCm"><img src="${imgPath + object.poster_path}"></div>
           <h2>${object.title}</h2>
         </div>
         <p class="rating"><ion-icon name="thumbs-up-outline"></ion-icon>  ${object.vote_average.toFixed(1)}</p>
