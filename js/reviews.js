@@ -1,8 +1,7 @@
 function getReviews(id) {
   let reviews = localStorage.getItem(id);
 
-  if (reviews) return JSON.parse(reviews);
-  else return [];
+  return reviews ? JSON.parse(reviews) : [];
 }
 
 function getUsernameArr(arr) {
