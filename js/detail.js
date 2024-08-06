@@ -1,4 +1,3 @@
-
 import { createReviews, loadReviews } from "./reviews.js";
 
 // Parameter로 넘어오는 id값 처리
@@ -6,10 +5,10 @@ let parameters = new URL(location.href).searchParams;
 let movieId = parameters.get("id");
 
 // 위치 정보 및 세팅값
-let openReviewInput = document.querySelector('.openReviewInput');
-let reviewInputForm = document.querySelector('.reviewInputForm');
-let reviewCloseButton = document.querySelector('.close');
-let reviewSubmitButton = document.querySelector('.submit');
+let openReviewInput = document.querySelector(".openReviewInput");
+let reviewInputForm = document.querySelector(".reviewInputForm");
+let reviewCloseButton = document.querySelector(".close");
+let reviewSubmitButton = document.querySelector(".submit");
 const options = {
   method: "GET",
   headers: {
@@ -70,15 +69,46 @@ function showInfo(object) {
 }
 
 //출연진
+//cast에서 15명까지만
 
 fetch(
   `https://api.themoviedb.org/3/movie/${movieId}/credits?language=ko`,
   options
 )
   .then((response) => response.json())
-  .then((response) => console.log(response))
+  //.then((response) => console.log(response))
   //.then((jsonData) => jsonData.crew.filter(({ job }) => job === "Director"))
+  .then((data) => {
+    console.log(data);
+    if (!data || !data.cast) {
+      console.error("출연진 데이터에 cast 정보가 없습니다.");
+      return;
+    }
+
+    const creditsInfo = data.cast;
+    const creditsBox = document.getElementsByClassName("credits_wrap")[0];
+
+    creditsInfo.slice(0, 14).forEach((cast) => {
+      const cdCard = mkCreditsBox(cast);
+      console.log(cdCard);
+      creditsBox.appendChild(cdCard);
+    });
+  })
   .catch((err) => console.error(err));
+
+function mkCreditsBox(cast) {
+  const card = document.createElement("div");
+  card.className = "credits_card";
+
+  card.innerHTML = `
+    <img src="${"https://image.tmdb.org/t/p/w500" + cast.profile_path}" alt="${
+    cast.name
+  }">
+    <h2>${cast.name}</h2>
+    <span>${cast.character}역</span>
+  `;
+  return card;
+}
 
 // 실관람평 쓰기 클릭시 입력창 열리는 event
 openReviewInput.addEventListener("click", (e) => {

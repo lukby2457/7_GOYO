@@ -123,33 +123,67 @@ header > h1 > a {
   cursor: pointer;
 }
 
-.tabBtn_wrap {
+ul {list-style: none;}
+
+.tabMenu {
+  width: 100%;
+  height: 100px;
+
+  position:relative;
+}
+
+.tab {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 
-  width: 350px;
-  height: 100px;
-  margin-top: 37px;
+  width: 380px;
+  margin: 10px 40px 20px 40px;
+  padding: 20px;
 
-  font-size: 40px;
-  font-weight: 430;
+  overflow: hidden;
 }
 
-#btnPOP {
-  color: var(--color-main);
+.tab > li {
+  color: #468fe1;
+  font-size: 45px;
+  font-weight: 300;
+  text-align: center;
 }
 
-#btnUpcoming{
-  color: var(--color-main);
+.is_on .btn {
+  color: white;
+  font-weight: bolder;
+}
+
+.btn {
+  font-size: 38px;
+  font-weight: 450;
 }
 
 a {
   text-decoration-line: none;
+  color: var(--color-main);
 }
 
-.cardList {
+.chartArea {
+  position: absolute;
+}
+
+.cont {
+  display: none;
+}
+
+.cardList1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.cardList2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -179,10 +213,17 @@ a {
   filter: grayscale(90%);
 }
 .cardWrap {
+  height: 625px;
+
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.datialBtnWrap {
+.detailBtnWrap {
   width: 346px;
   height: 625px;
   margin-bottom: 25px;
@@ -209,7 +250,7 @@ a {
   font-weight: 450;
 }
 
-.card:hover > .datialBtnWrap {
+.card:hover > .detailBtnWrap {
   display: block;
 
   display: flex;
@@ -247,8 +288,8 @@ a {
 }
 
 .rating {
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 15px;
   margin-left: 10px;
   color: var(--color-main);
   text-align: center;
