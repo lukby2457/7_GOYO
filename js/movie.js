@@ -1,7 +1,7 @@
 // TMDB에서 Top Rated 20개 들고오는 function
 export function loadCards(location, options, arr1, arr2) {
   fetch(
-    "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+    "https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1",
     options
   )
     .then((response) => response.json())
@@ -36,7 +36,7 @@ function createCard(object) {
       <p class="rating">rating : ${object.vote_average}</p>
     </div>
     <div class="detailBtnWrap">
-      <button onclick="location.href='detail.html?id=${object.id}'" class="goDetail">상세보기</button>
+      <button onclick="location.href='./detail.html?id=${object.id}'" class="goDetail">상세보기</button>
     </div>
     `;
 

@@ -28,10 +28,10 @@ const tabList = document.querySelectorAll('.tabMenu .tab li');
 const contents = document.querySelectorAll('.chartArea .cont')
 let activeCont = ''; // 현재 활성화된 컨텐츠 (기본:#tab1 활성화)
 
-for(var i = 0; i < tabList.length; i++){
+for(let i = 0; i < tabList.length; i++){
   tabList[i].querySelector('.btn').addEventListener('click', function(e){
     e.preventDefault();
-    for(var j = 0; j < tabList.length; j++){
+    for(let j = 0; j < tabList.length; j++){
       // 나머지 버튼 클래스 제거
       tabList[j].classList.remove('is_on');
 
@@ -44,7 +44,7 @@ for(var i = 0; i < tabList.length; i++){
 
     // 버튼 클릭시 컨텐츠 전환
     activeCont = this.getAttribute('href');
-    document.querySelector(activeCont).style.display = 'block';
+    document.querySelector(activeCont).style.display = 'flex';
   });
 }
 
