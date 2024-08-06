@@ -14,8 +14,10 @@ http://sss.com
 
 <details>
 <summary>상세페이지 리뷰 작성 CRUD 제작</summary>
-- *Write here!*<br>
-- *Write here!*
+- To Create 버튼 클릭 시 리뷰 작성하는 form 표시<br>
+- 리뷰 작성 form에 내용 입력 후 작성하기 버튼 클릭 시 리뷰를 localStorage에 저장 후 화면 새로고침 진행<br>
+- 각 리뷰에서 삭제 버튼 클릭 시 사용자에게 리뷰 작성 시 등록 했던 패스워드를 입력하게 prompt창 표시<br>
+- '정말로 삭제하시겠습니까'에서 확인 클릭 시 localStorage에 삭제 내용을 반영 후 화면 새로고침 진행
 </details>
 
 ### 안수영
