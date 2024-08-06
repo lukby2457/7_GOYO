@@ -25,7 +25,7 @@ http://sss.com
 - 상세보기 버튼 만들기(movie.js / upcomMov.js 파일 innerHTML 내용으로 넣음)<br>
 - 영화카드에 마우스 가져가면 '상세보기' 버튼 나타남(index.css 파일에서 hover기능)
 - '상세보기' 버튼 클릭하면 상세페이지로 새창을 열지 않고 현재 페이지에서 이동(영화 id값 innerHTML에 입력)
-    참고링크 <https://stickode.tistory.com/182>
+- [참고링크](https://stickode.tistory.com/182)
 </details>
 <details>
 <summary>상영예정작 API 불러오기</summary>
@@ -35,7 +35,7 @@ http://sss.com
 <details>
 <summary>탭메뉴 구현 - 평점순 / 상영예정작</summary>
 - 각 탭 클릭하면 해당 영화차트만 보여줌(index.js에서 구현)<br>
-    참고링크 <https://abcdqbbq.tistory.com/88>
+- [참고링크](https://abcdqbbq.tistory.com/88)
 </details>
 
 ### 임보라
