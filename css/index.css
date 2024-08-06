@@ -1,127 +1,4 @@
-:root {
-  --color-main: #A1C4EB;
-  --color-back: #212121;
-  --color-card: #111111;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  display: block;
-  font-size: 2em;
-  /* margin-top: 0.67em;
-  margin-bottom: 0.67em; */
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-h2 {
-  display: block;
-  font-size: 1.75em;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-p {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-body {
-  /* width: 1900px; */
-  margin: 0 auto;
-  background-color: var(--color-back);
-}
-
-body::-webkit-scrollbar {
-  width: 2px;
-  /* background-color: #212121; */
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--color-back);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--color-main);
-  border-radius: 1px;
-}
-
-header {
-  display: flex;
-  background-color: var(--color-back);
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-header > h1 > a {
-  color: var(--color-main);
-  margin: 0;
-  padding: 0px 25px;
-}
-
-.inputForm {
-  display: flex;
-  flex-direction: row;
-  padding: 0px 25px;
-  gap: 5px;
-}
-
-#input {
-  color: var(--color-main);
-  font-size: 15px;
-  padding: 0 7px;
-  background-color: transparent;
-  border: 2px solid var(--color-main);
-  min-width: 350px;
-  border-radius: 8px;
-}
-/* .inputForm:hover #input{
-  animation: searchOn 2s forwards;
-} */
-/* @keyframes searchOn{
-  0%{
-      width: 0%;
-  }
-  100%{
-      width: 350px;
-  }
-} */
-
-#input:focus {
-  outline: none;
-}
-
-#inputButton {
-  background-color: var(--color-main);
-  width: 50px;
-  height: 50px;
-  color: var(--color-back);
-  font-size: 22px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid var(--color-main);
-  cursor: pointer;
-}
 
 ul {list-style: none;}
 
@@ -136,87 +13,106 @@ ul {list-style: none;}
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 20px;
   align-items: center;
-
-  width: 380px;
-  margin: 10px 40px 20px 40px;
-  padding: 20px;
-
-  overflow: hidden;
+  padding: 20px 0px;
+}
+.tab > span.line{
+  width: 1px;
+  height: 20px;
+  background-color: #fff;
 }
 
 .tab > li {
-  color: #468fe1;
-  font-size: 45px;
-  font-weight: 300;
+  color: #fff;
+  /* font-size: 45px; */
+  /* font-weight: 300; */
   text-align: center;
 }
 
 .is_on .btn {
-  color: white;
+  color: var(--color-main);
   font-weight: bolder;
+  position: relative;
+}
+.is_on .btn::before{
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #468fe1;
+  position: absolute;
+  top: -2px;
+  left: -9px;
 }
 
 .btn {
-  font-size: 38px;
+  font-size: 28px;
   font-weight: 450;
 }
 
 a {
   text-decoration-line: none;
-  color: var(--color-main);
+  color: #fff;
+}
+
+.movieChartTab_wrap{
+  width: 95%;
+  margin: 0 auto;
 }
 
 .chartArea {
   position: absolute;
+  width: 100%;
 }
 
 .cont {
   display: none;
+  width: 100%;
 }
 
-.cardList1 {
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15%, auto));
+  width: 95%;
+  margin: 0 auto;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+/* .cardList2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-}
-
-.cardList2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+} */
 
 .card {
-  background-color: var(--color-card);
-  border-radius: 15px;
+  /* background-color: var(--color-card); */
+  /* border-radius: 15px; */
   overflow: hidden;
-  /* background-color: #212121; */
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 2px solid var(--color-back);
-  width: 346px;
-  height: 625px;
+  /* width: 346px; */
+  /* height: 625px; */
   margin-bottom: 25px;
 }
 
 .card:hover {
   border: 2px solid var(--color-main);
   border-radius: 15;
-  width: 346px;
+  /* width: 346px; */
 
   filter: grayscale(90%);
 }
 .cardWrap {
-  height: 625px;
-
   position: relative;
-
+  gap: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -224,14 +120,12 @@ a {
 }
 
 .detailBtnWrap {
-  width: 346px;
-  height: 625px;
+  width: 100%;
+  height: 100%;
   margin-bottom: 25px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   display: none;
   position: absolute;
 }
@@ -240,19 +134,14 @@ a {
   background-color: white;
   border: none;
   border-radius: 10px;
-
-  width: 250px;
-  height: 75px;
-
   text-align: center;
-  line-height: 80px;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: 450;
+  padding: 14px 36px;
 }
 
 .card:hover > .detailBtnWrap {
   display: block;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,15 +150,13 @@ a {
 .goDetail:hover {
   cursor: pointer;
   filter: grayscale(90%);
-
-  box-shadow: 0px 0px 6px 4px #468fe1 inset;
+  box-shadow: 0px 0px 7px 0px #468fe1 inset;
   transition-duration: 0.15s;
 }
 
 .btnWrap {
   width: 346px;
   height: 611px;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,19 +165,41 @@ a {
 .card img {
   display: flex;
   width: 100%;
+  border-radius: 9px;
 }
 
 .card h2 {
-  color: var(--color-main);
-  margin-top: 5px;
-  margin-bottom: 0;
+  /* color: var(--color-main); */
   text-align: center;
+  margin: 30px 0 0px;
+  font-size: 22px;
+  line-height: 1.3;
+  padding: 0 10px;
+  min-height: 60px;
 }
 
 .rating {
-  margin-top: 20px;
+  /* margin-top: 20px;
   margin-bottom: 15px;
-  margin-left: 10px;
+  margin-left: 10px; */
   color: var(--color-main);
   text-align: center;
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1500px) {
+  .cardList {
+    grid-template-columns: repeat(auto-fill, minmax(16%, auto));
+  }
+}
+@media screen and (max-width: 1200px) {
+  .cardList {
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+  }
+}
+@media screen and (max-width: 768px) {
+  .cardList {
+    grid-template-columns: repeat(auto-fill, minmax(33%, auto));
+  }
 }

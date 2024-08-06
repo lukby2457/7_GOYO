@@ -60,6 +60,7 @@ const optionsBanner = {
 
   bannerMovie()
 
+  //상세페이지 이동
   async function bannerDetail() {
     const mvApi = await fetchMovie();
     const detailBtn = document.querySelectorAll('.detailBtn');
@@ -68,7 +69,7 @@ const optionsBanner = {
       const url = new URL("http://127.0.0.1:5502/detail.html"); //로컬주소라 추후 도메인변경해야함
       detailBtn[index].addEventListener('click', (e) => {
         const detailUrl = `${url.href}?id=${idx.id}`
-        window.open(detailUrl, '_blank'); 
+        window.open(detailUrl, '_self'); 
 
         console.log(`클릭클릭 : ${index}${idx.id}${detailUrl}`)
       })
@@ -76,5 +77,58 @@ const optionsBanner = {
 
   };
   bannerDetail()
+
+  //bannerItem 아코디언 이벤트
+  const bannerItem = document.querySelectorAll('.banner-item');
+  
+  for (let i = 0; i < bannerItem.length; i++) {
+    bannerItem[i].addEventListener('click', (e) => {
+        bannerItem.forEach(item => {
+          item.classList.remove('active');
+        });
+      e.currentTarget.classList.add('active');
+      bannerIframe()
+    });
+  };
+
+
+  //각 배너별 아이프레임 삽입
+  function bannerIframe() {
+    const iframeURLs = [
+      "https://www.youtube.com/embed/C2QCuBX_byg?si=JdmFFcr3ZrtL6F2b&controls=0&autohide=1&rel=0&modestbranding=0",
+      "https://www.youtube.com/embed/4ycxumdqUnY?si=kkwOGBFzyqvjLeW8&controls=0&autohide=1&rel=0&modestbranding=0",
+      "https://www.youtube.com/embed/hjOSU-NqPC8?si=I2epmtijPnyYyh5d&amp;controls=0&autohide=1&rel=0&modestbranding=0",
+      "https://www.youtube.com/embed/EiCmnIaj4u8?si=v5IaPJLzW2IoUfMA&amp;controls=0&autohide=1&rel=0&modestbranding=0",
+      "https://www.youtube.com/embed/g1NL-Px92k4?si=GzsvQqvPO-01QWwv&amp;controls=0&autohide=1&rel=0&modestbranding=0",
+    ];
+
+    let bannerItems = document.querySelectorAll('.banner-item');
+
+    bannerItems.forEach((item, index) => {
+      const existingIframe = item.querySelector('iframe');
+      if(item.classList.contains('active')){
+        if(!existingIframe){ 
+          const iframe = document.createElement('iframe');
+          iframe.src = iframeURLs[index];
+          iframe.className = 'video';
+          iframe.title = 'YouTube video player';
+          iframe.frameBorder = '0';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          iframe.allowFullscreen = true;
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          item.insertBefore(iframe, item.firstChild); // 자식요소 중 맨 처음에 추가
+        }
+      }else{
+        if(existingIframe){
+          item.removeChild(existingIframe)
+        }
+      }
+      
+    });
+  }
+    document.addEventListener('DOMContentLoaded', bannerIframe); 
+
 
   

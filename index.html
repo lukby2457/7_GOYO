@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/font.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <script type="module" src="./js/index.js"></script>
@@ -12,7 +14,7 @@
   <!--아이콘-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <title></title>
+    <title>GOYO-MV</title>
   </head>
 
   <body>
@@ -65,76 +67,20 @@
     <div class="tabMenu">
       <ul class="tab">
         <li class="is_on"><a href="#tab1" class="btn">평점순</a></li>
+        <span class="line"></span>
         <li><a href="#tab2" class="btn">상영예정작</a></li>
       </ul>
     </div>
   </section>
   <section class="chartArea">
     <div id="tab1" class="cont" style="display:block;">
-      <div class="cardList1"></div>
+      <div class="cardList1 cardList"></div>
     </div>
     <div id="tab2" class="cont">
-      <div class="cardList2"></div>
+      <div class="cardList2 cardList"></div>
     </div>
   </section>
 </body>
 
-<script>
-
-
-  //bannerItem 아코디언 이벤트
-  const bannerItem = document.querySelectorAll('.banner-item');
-  
-  for (let i = 0; i < bannerItem.length; i++) {
-    bannerItem[i].addEventListener('click', (e) => {
-        bannerItem.forEach(item => {
-          item.classList.remove('active');
-        });
-      e.currentTarget.classList.add('active');
-      bannerIframe()
-    });
-  };
-
-
-  //각 배너별 아이프레임 삽입
-  function bannerIframe() {
-    const iframeURLs = [
-      "https://www.youtube.com/embed/C2QCuBX_byg?si=JdmFFcr3ZrtL6F2b&controls=0&autohide=1&rel=0&modestbranding=0",
-      "https://www.youtube.com/embed/4ycxumdqUnY?si=kkwOGBFzyqvjLeW8&controls=0&autohide=1&rel=0&modestbranding=0",
-      "https://www.youtube.com/embed/hjOSU-NqPC8?si=I2epmtijPnyYyh5d&amp;controls=0&autohide=1&rel=0&modestbranding=0",
-      "https://www.youtube.com/embed/EiCmnIaj4u8?si=v5IaPJLzW2IoUfMA&amp;controls=0&autohide=1&rel=0&modestbranding=0",
-      "https://www.youtube.com/embed/g1NL-Px92k4?si=GzsvQqvPO-01QWwv&amp;controls=0&autohide=1&rel=0&modestbranding=0",
-    ];
-
-    let bannerItems = document.querySelectorAll('.banner-item');
-
-    bannerItems.forEach((item, index) => {
-      const existingIframe = item.querySelector('iframe');
-      if(item.classList.contains('active')){
-        if(!existingIframe){ 
-          const iframe = document.createElement('iframe');
-          iframe.src = iframeURLs[index];
-          iframe.className = 'video';
-          iframe.title = 'YouTube video player';
-          iframe.frameBorder = '0';
-          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-          iframe.allowFullscreen = true;
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-          item.insertBefore(iframe, item.firstChild); // 자식요소 중 맨 처음에 추가
-        }
-      }else{
-        if(existingIframe){
-          item.removeChild(existingIframe)
-        }
-      }
-      
-    });
-  }
-    document.addEventListener('DOMContentLoaded', bannerIframe); 
-
-
-</script>
 
 </html>
