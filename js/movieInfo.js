@@ -1,7 +1,7 @@
 //영화 정보를 넣는 함수
 function showInfo(object) {
   const backgroundImgPath =
-  "https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces";
+    "https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces";
   const posterImgPath = "https://image.tmdb.org/t/p/w500";
 
   //배너 배경으로 영화 이미지 넣기
@@ -34,8 +34,8 @@ function showInfo(object) {
   postCard.innerHTML = `
     <img src="${posterImgPath + object.poster_path}" alt="">
     `;
-    //리뷰 입력창에 제목 표시
-    const inputTitle = document.querySelector(".inputFormTitle");
+  //리뷰 입력창에 제목 표시
+  const inputTitle = document.querySelector(".inputFormTitle");
   inputTitle.innerHTML = `'${object.title}' 영화 어떠셨나요?`;
 }
 
@@ -43,6 +43,24 @@ function mkCreditsBox(cast) {
   const card = document.createElement("div");
   card.className = "credits_card";
 
+  if (cast.profile_path === null) {
+    //img값이 null일 때 디폴트 이미지 보여줌
+    card.innerHTML = `
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" + cast.profile_path}" alt="${cast.name}">
+    <h2>${cast.name}</h2>
+    <span>${cast.character}역</span>
+  `;
+  } else {
+    card.innerHTML = `
+    <img src="${"https://image.tmdb.org/t/p/w500" + cast.profile_path}" alt="${
+      cast.name
+    }">
+    <h2>${cast.name}</h2>
+    <span>${cast.character}역</span>
+  `;
+  }
+  return card;
+  /*
   card.innerHTML = `
     <img src="${"https://image.tmdb.org/t/p/w500" + cast.profile_path}" alt="${
     cast.name
@@ -51,6 +69,7 @@ function mkCreditsBox(cast) {
     <span>${cast.character}역</span>
   `;
   return card;
+  */
 }
 
 //영화 정보 가져오는 함수
@@ -65,10 +84,7 @@ export function showMovieInfo(id, options) {
 }
 
 export function showCredits(id, options) {
-  fetch(
-    `https://api.themoviedb.org/3/movie/${id}/credits?language=ko`,
-    options
-  )
+  fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=ko`, options)
     .then((response) => response.json())
     //.then((response) => console.log(response))
     //.then((jsonData) => jsonData.crew.filter(({ job }) => job === "Director"))
@@ -78,10 +94,10 @@ export function showCredits(id, options) {
         console.error("출연진 데이터에 cast 정보가 없습니다.");
         return;
       }
-  
+
       const creditsInfo = data.cast;
       const creditsBox = document.getElementsByClassName("credits_wrap")[0];
-  
+
       creditsInfo.slice(0, 14).forEach((cast) => {
         const cdCard = mkCreditsBox(cast);
         console.log(cdCard);
