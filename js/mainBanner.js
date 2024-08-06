@@ -14,7 +14,7 @@ const optionsBanner = {
 //영화정보 가져오는 기능
   async function fetchMovie() { 
     try {//try catch문
-        const response = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', optionsBanner);
+        const response = await fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', optionsBanner);
         const data = await response.json();
         console.log(data)
         return data.results;
@@ -66,9 +66,9 @@ const optionsBanner = {
     const detailBtn = document.querySelectorAll('.detailBtn');
     detailBtn.forEach((item,index)=>{
       const idx = mvApi[index];
-      const url = new URL("http://127.0.0.1:5502/detail.html"); //로컬주소라 추후 도메인변경해야함
+      const url = "./detail.html";
       detailBtn[index].addEventListener('click', (e) => {
-        const detailUrl = `${url.href}?id=${idx.id}`
+        const detailUrl = `${url}?id=${idx.id}`
         window.open(detailUrl, '_self'); 
 
         console.log(`클릭클릭 : ${index}${idx.id}${detailUrl}`)
