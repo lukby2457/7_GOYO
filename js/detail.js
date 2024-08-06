@@ -45,3 +45,14 @@ reviewSubmitButton.addEventListener("click", (e) => {
   e.preventDefault();
   createReviews(movieId);
 });
+
+
+//포스터 이미지 로드 후 0.5초뒤 나타나게
+window.addEventListener('load', function() {
+  setTimeout(() => {
+    const posterImg = this.document.querySelector('.movie_poster_wrap > img');
+    if(posterImg){
+      posterImg.classList.add('visible');
+    }
+  }, 500);
+});

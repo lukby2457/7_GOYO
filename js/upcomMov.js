@@ -33,7 +33,7 @@ export function loadUpcomingCards(location, options, arr1, arr2) {
           <img src="${imgPath + object.poster_path}">
           <h2>${object.title}</h2>
         </div>
-        <p class="rating">rating : ${object.vote_average}</p>
+        <p class="rating"><ion-icon name="thumbs-up-outline"></ion-icon>  ${object.vote_average.toFixed(1)}</p>
       </div>
       <div class="detailBtnWrap">
         <button onclick="location.href='./detail.html?id=${object.id}'" class="goDetail">상세보기</button>

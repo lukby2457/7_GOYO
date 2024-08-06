@@ -76,7 +76,8 @@ function createReview(data, id) {
   div.appendChild(reviewP);
 
   const hashTagP = document.createElement('p');
-  hashTagP.className = 'sizeDown';
+  // hashTagP.className = 'sizeDown';
+  hashTagP.classList.add('sizeDown', 'hash');
   hashTagP.innerHTML = `${hash}`;
   div.appendChild(hashTagP);
 

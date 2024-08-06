@@ -1,123 +1,10 @@
-:root {
-  --color-main: #a1c4eb;
-  --color-back: #212121;
-  --color-card: #111111;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  display: block;
-  font-size: 2em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-h2 {
-  display: block;
-  font-size: 1.5em;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-p {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-body {
-  min-width: 1900px;
-  margin: 0 auto;
-  background-color: var(--color-back);
-}
-
-body::-webkit-scrollbar {
-  width: 2px;
-  /* background-color: #212121; */
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--color-back);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--color-main);
-  border-radius: 1px;
-}
-
-header {
-  position: sticky;
-  top: 0px;
-  display: flex;
-  background-color: var(--color-back);
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: yellow; */
-  padding-bottom: 15px;
-  margin-bottom: 10px;
-  z-index: 999;
-}
-
-header > h1 {
-  color: var(--color-main);
-  margin: 0;
-  padding: 10px 25px 0 25px;
-}
-
-h1 > a {
-  text-decoration: none;
-  color: var(--color-main);
-}
-
-.inputForm {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 25px 0 25px;
-}
-
-#input {
-  color: var(--color-main);
-  font-size: 15px;
-  padding: 0 7px;
-  background-color: var(--color-back);
-  border: 2px solid var(--color-main);
-  border-right: 0;
-  width: 350px;
-  height: 30px;
-}
-
-#input:focus {
-  outline: none;
-}
-
-#inputButton {
-  background-color: var(--color-main);
-  border: 2px solid var(--color-main);
-  width: 35px;
-  color: var(--color-back);
-  font-size: 23px;
-  font-weight: bolder;
-}
-
-/*movie_detail_container*/
 .movie_detail_container {
-  background-size: cover;
+  background-size: contain;
   width: 100%;
   min-height: 600px;
   margin: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .movie_detail_container_wrap {
   display: flex;
@@ -141,6 +28,14 @@ h1 > a {
 }
 .movie_poster_wrap > img {
   width: 300px;
+  /* animation */
+  display: none; 
+  opacity: 0;
+  transition: all 10s ease-in-out;
+}
+.movie_poster_wrap img.visible {
+  display: block;
+  opacity: 1;
 }
 .movie_info p {
   font-size: 12px;
@@ -148,9 +43,11 @@ h1 > a {
 }
 .movie_info > p:last-child {
   font-size: 14px;
+  padding-top: 20px;
 }
 .movie_info h1 {
   font-size: 40px;
+  font-weight: bold;
 }
 .movie_info span {
   font-size: 16px;
@@ -159,8 +56,10 @@ h1 > a {
 
 /*credits css*/
 .credits {
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   margin: auto;
+  overflow: hidden;
 }
 .credits > h1 {
   color: #fff;
@@ -174,10 +73,23 @@ h1 > a {
   height: 210px;
   margin: auto;
   text-align: center;
+  padding-top: 20px;
+  overflow-y: hidden;
 }
 
-.credits_card {
+.credits_card:hover {
   margin-right: 20px;
+  animation: target 0.2s forwards;
+  cursor: pointer;
+}
+
+@keyframes target{
+  0%{
+      transform: scale(1);
+  }
+  100%{
+      transform: scale(1.2);
+  }
 }
 
 .credits_card > img {
@@ -215,26 +127,31 @@ h1 > a {
 /*================*/
 
 .review_container {
-  width: 1875px;
-  margin-left: 25px;
-  padding: 80px 0;
+  width: 100%;
+  max-width: 1920px;
+  padding: 200px 0px 80px;
+  margin: 0 auto;
 }
 
 .reviewHeader {
   /* background-color: aquamarine; */
-  width: 1850px;
+  /* width: 1850px; */
   display: flex;
   justify-content: space-between;
   color: white;
   margin-bottom: 15px;
+  align-items: center;
 }
 
 .reviewHeader > div {
   display: flex;
+  gap: 10px;
 }
 
 .reviewHeader h2 {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  margin: 0;
+  font-size: 24px;
 }
 
 .reviewCount {
@@ -243,21 +160,40 @@ h1 > a {
 
 .openReviewInput {
   margin-top: 10px;
-  height: 35px;
+  /* height: 35px; */
+  padding: 10px 0;
   font-size: 1em;
   border: 0;
-  background-color: lightgray;
-  color: var(--color-back);
+  background-color: transparent;
+  border: 1px solid lightgray;
+  color: #fff;
   width: 160px;
+  border-radius: 26px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .openReviewInput:hover {
   cursor: pointer;
+  animation: bgChange 0.2s forwards;
 }
+@keyframes bgChange{
+  0%{
+      background-color: transparent;
+  }
+  100%{
+    background-color: #fff;
+    color: #000;
+  }
+}
+
 
 .reviewInputForm {
   display: none;
-  width: 1850px;
+  width: 100%;
   background-color: lightgray;
 }
 
@@ -268,8 +204,8 @@ h1 > a {
 .reviewInput {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 25px;
+  padding: 40px;
+  margin-bottom: 70px;
 }
 
 #username {
@@ -319,11 +255,16 @@ h1 > a {
   background-color: transparent;
   width: 10px;
 }
+.close ion-icon{
+  font-size: 20px;
+}
 
 .close:hover {
   cursor: pointer;
 }
-
+.inputFormTitle{
+  padding-top: 30px;
+}
 .submit {
   height: 30px;
   font-size: 1em;
@@ -332,6 +273,10 @@ h1 > a {
   border: 0;
   background-color: var(--color-back);
   color: white;
+  border-radius: 26px;
+}
+.pointHash{
+  padding-top: 30px;
 }
 
 .submit:hover {
@@ -340,23 +285,30 @@ h1 > a {
 
 .reviews {
   /* background-color: lightgreen; */
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-start; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .reviewCard {
   background-color: lightgray;
-  width: 580px;
   min-height: 150px;
-  margin-bottom: 25px;
-  margin-right: 25px;
-  padding: 10px;
+  padding: 20px 40px 40px;
+}
+.reviewCard > h4{
+  padding: 10px 0;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .reviewCard > p {
   margin: 0;
-  margin-top: 5px;
+  margin-top: 15px;
+  color: #545454;
 }
 
 .reviewBox {
@@ -379,4 +331,30 @@ h1 > a {
   border: 0;
   width: 30px;
   font-size: 13px;
+  cursor: pointer;
+}
+.hash{
+  color: #3b843b!important;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: 'NEXON Lv2 Gothic';
+}
+@media screen and (max-width: 1920px) {
+  .review_container{
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .movie_detail_container_wrap{
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .movie_poster_wrap{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+  }
+  .movie_info{
+    padding: 30px 0;
+  }
 }
