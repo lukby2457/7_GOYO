@@ -1,0 +1,134 @@
+.mainBanner{
+    width: 100%;
+    height: 900px;
+    /* background-color: antiquewhite; */
+    margin-bottom: 100px;
+}
+.mainBanner ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.mainBanner ul li{
+    width: 8vw;
+    height: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    background-color: black;
+    overflow: hidden;
+}
+.mainBanner ul li.active{
+    width: 68vw;
+    opacity: 1;
+    position: relative;
+}
+.mainBanner ul li iframe{
+    display: none;
+}
+.mainBanner ul li.active iframe{
+    display: block;
+}
+.mainBanner ul li .b-item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.mainBanner ul li.active .b-item > img,
+.mainBanner ul li.active .b-item > h2{
+    display: none;
+}
+.mainBanner ul li.active .bannerTitle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 4% 4%;
+}
+.mainBanner ul li.active .bannerTitle h2{
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    margin: 40px 0;
+    transform-origin: left;
+    animation: scale 2s forwards;
+    /* font-family: 'BMDOHYEON'; */
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.mainBanner ul li .bannerTitle{
+    display: none;
+}
+.mainBanner ul li.active .bannerTitle{
+    display: block;
+}
+.mainBanner ul li.active .bannerTitle button{
+    padding: 15px 40px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+}
+.mainBanner ul li.active .bannerTitle button:after {
+    content: "";
+    border-radius: 5px;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    left: -1px;
+    transition: all 0.4s;
+    background: #000000;
+}
+.mainBanner ul li.active .bannerTitle button:hover{
+    color: #ffffff;
+}
+.mainBanner ul li.active .bannerTitle button:hover:after{
+    width: 102%;
+    z-index: -1;
+}
+
+.mainBanner ul .b-item h2{
+    color: #fff;
+    position: absolute;
+    font-family: 'BMDOHYEON';
+    transform: rotate(270deg);
+    transform-origin: center;
+    width: max-content;
+    text-align: start;
+    font-size: 35px;
+    letter-spacing: 1.8px;
+}
+.mainBanner ul .b-item img{
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+}
+
+.ytp-chrome-top{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mainBanner ul .b-item h2{
+      font-size: 20px;
+    }
+    .mainBanner ul li.active .bannerTitle h2{
+        font-size: 40px;
+        max-width: 400px;
+    }
+  }

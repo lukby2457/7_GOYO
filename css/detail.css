@@ -1,0 +1,365 @@
+.movie_detail_container {
+  background-size: contain;
+  width: 100%;
+  min-height: 600px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.movie_detail_container_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 600px;
+  margin: auto;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.movie_info {
+  width: 50%;
+  color: #fff;
+  padding-top: 200px;
+  word-break: break-all;
+}
+.movie_poster_wrap {
+  width: 30%;
+  text-align: center;
+}
+.movie_poster_wrap > img {
+  width: 300px;
+  /* animation */
+  display: none;
+  opacity: 0;
+  transition: all 10s ease-in-out;
+}
+.movie_poster_wrap img.visible {
+  display: block;
+  opacity: 1;
+}
+.movie_info p {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.movie_info > p:last-child {
+  font-size: 14px;
+  padding-top: 20px;
+}
+.movie_info h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.movie_info span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*credits css*/
+.credits {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  overflow: hidden;
+}
+.credits > h1 {
+  color: #fff;
+  font-size: 24px;
+  margin: 50px 0 30px 20px;
+}
+.credits_wrap {
+  overflow: auto;
+  display: flex;
+  width: 1400px;
+  height: 210px;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  overflow-y: hidden;
+}
+
+.credits_card:hover {
+  margin-right: 20px;
+  animation: target 0.2s forwards;
+  cursor: pointer;
+}
+
+@keyframes target {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.credits_card > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 20px;
+  border-radius: 50%;
+} /*
+.credits_card > .noImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+}*/
+.credits_card > h2 {
+  margin: 10px 0 10px 0;
+  color: var(--color-main);
+  font-size: 18px;
+}
+.credits_card > span {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/*스크롤*/
+.credits_wrap::-webkit-scrollbar {
+  height: 10px;
+}
+.credits_wrap::-webkit-scrollbar-thumb {
+  background-color: var(--color-main);
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.credits_wrap::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/*================*/
+
+.review_container {
+  width: 100%;
+  max-width: 1920px;
+  padding: 200px 0px 80px;
+  margin: 0 auto;
+}
+
+.reviewHeader {
+  /* background-color: aquamarine; */
+  /* width: 1850px; */
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.reviewHeader > div {
+  display: flex;
+  gap: 10px;
+}
+
+.reviewHeader h2 {
+  /* margin-bottom: 10px; */
+  margin: 0;
+  font-size: 24px;
+}
+
+.reviewCount {
+  color: lightgreen;
+}
+
+.openReviewInput {
+  margin-top: 10px;
+  /* height: 35px; */
+  padding: 10px 0;
+  font-size: 1em;
+  border: 0;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  color: #fff;
+  width: 160px;
+  border-radius: 26px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.openReviewInput:hover {
+  cursor: pointer;
+  animation: bgChange 0.2s forwards;
+}
+@keyframes bgChange {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.reviewInputForm {
+  display: none;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.reviewCount {
+  margin-left: 10px;
+}
+
+.reviewInput {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  margin-bottom: 70px;
+}
+
+#username {
+  background-color: transparent;
+  border: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-back);
+}
+
+#username:focus {
+  outline: none;
+}
+
+#password {
+  background-color: transparent;
+  border: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-back);
+}
+
+#password:focus {
+  outline: none;
+}
+
+#review {
+  width: 1600px;
+  background-color: transparent;
+  border: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-back);
+  font-size: 15px;
+}
+
+#review:focus {
+  outline: none;
+}
+
+.inputFormButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.close {
+  border: 0;
+  background-color: transparent;
+  width: 10px;
+}
+.close ion-icon {
+  font-size: 20px;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+.inputFormTitle {
+  padding-top: 30px;
+}
+.submit {
+  height: 30px;
+  font-size: 1em;
+  height: 50px;
+  width: 150px;
+  border: 0;
+  background-color: var(--color-back);
+  color: white;
+  border-radius: 26px;
+}
+.pointHash {
+  padding-top: 30px;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+.reviews {
+  /* background-color: lightgreen; */
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.reviewCard {
+  background-color: lightgray;
+  min-height: 150px;
+  padding: 20px 40px 40px;
+}
+.reviewCard > h4 {
+  padding: 10px 0;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.reviewCard > p {
+  margin: 0;
+  margin-top: 15px;
+  color: #545454;
+}
+
+.reviewBox {
+  min-height: 80px;
+}
+
+.sizeDown {
+  font-size: 12px;
+}
+
+.reviewCardButtons {
+  display: flex;
+  position: relative;
+  justify-content: end;
+  height: 20px;
+}
+
+.reviewCardButtons > button {
+  background-color: transparent;
+  border: 0;
+  width: 30px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.hash {
+  color: #3b843b !important;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "NEXON Lv2 Gothic";
+}
+@media screen and (max-width: 1920px) {
+  .review_container {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .movie_detail_container_wrap {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .movie_poster_wrap {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+  }
+  .movie_info {
+    padding: 30px 0;
+  }
+}

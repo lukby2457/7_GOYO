@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/mainBanner.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/index.css">
-  <script type="module" src="./js/index.js"></script>
-  <title>MoviCol</title>
-</head>
+  <!--아이콘-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>GOYO-MV</title>
+  </head>
 
-<body>
-  <header>
-    <h1>MoviCol</h1>
+  <body>
+    <header>
+      <h1><a href="./index.html">GOYO-MV</a></h1>
 
     <form class="inputForm">
       <input type="text" id="input">
-      <button id="inputButton">⌕</button>
+      <button id="inputButton"><ion-icon name="search-outline"></ion-icon></button>
     </form>
   </header>
 
-  <section class="cardList">
+  <section class="mainBanner">
+    <ul id="videoContainer">
+      <li class="banner-item active">
+          <div class="bannerTitle">
+            <h2></h2>
+            <button class="detailBtn">상세보기</button>
+          </div>
+        </li>
+      <li class="banner-item">
+        <div class="bannerTitle">
+          <h2></h2>
+          <button class="detailBtn">상세보기</button>
+        </div>
+      </li>
+      <li class="banner-item">
+        <div class="bannerTitle">
+          <h2></h2>
+          <button class="detailBtn">상세보기</button>
+        </div>
+      </li>
+      <li class="banner-item">
+        <div class="bannerTitle">
+          <h2></h2>
+          <button class="detailBtn">상세보기</button>
+        </div>
+      </li>
+      <li class="banner-item">
+        <div class="bannerTitle">
+          <h2></h2>
+          <button class="detailBtn">상세보기</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!--영화차트: 탭과 차트-->
+  <section class="movieChartTab_wrap">
+    <div class="tabMenu">
+      <ul class="tab">
+        <li class="is_on"><a href="#tab1" class="btn">평점순</a></li>
+        <span class="line"></span>
+        <li><a href="#tab2" class="btn">상영예정작</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="chartArea">
+    <div id="tab1" class="cont" style="display:flex;">
+      <div class="cardList1 cardList"></div>
+    </div>
+    <div id="tab2" class="cont">
+      <div class="cardList2 cardList"></div>
+    </div>
   </section>
 </body>
+
 
 </html>
