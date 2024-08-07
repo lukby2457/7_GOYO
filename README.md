@@ -4,7 +4,7 @@ TMDB (https://www.themoviedb.org/ )에서 제공하는 영화정보API를 활용
 
 ## 🔗배포주소
 
-http://sss.com
+https://lukby2457.github.io/7_GOYO/
 
 <br>
 
